@@ -2,14 +2,14 @@ flask
 flask_cors
 Pillow
 matplotlib
-h5pyd
 numpy
 pandas
 tqdm
 geopandas
 xarray
-NREL-rex
 shapely
 fiona
 pyomo
 gurobipy
+scipy
+openpyxl

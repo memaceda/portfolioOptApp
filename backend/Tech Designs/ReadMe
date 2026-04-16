@@ -1,0 +1,8 @@
+#This is where technology intput files will go. For example .csv files or file structures that will be read and processed.
+#There are different subfolders for each technology class:
+  Wind Turbines (Wind)
+  Wave Energy Converters (Wave)
+  Ocean Kites (Current)
+  Coaxial Turbines (Coaxial)
+  Tidal Turbines (Tidal)
+  Transmission System (Transmission)

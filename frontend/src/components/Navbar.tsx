@@ -20,9 +20,8 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'Home', href: '/', current: currentLink ===  '/'},
-    { name: 'Download', href: '/download', current: currentLink ===  '/download' },
-    { name: 'About', href: '#', current: false },
     { name: 'Prototype', href: '/prototype', current: currentLink ===  '/prototype' },
+    { name: 'About', href: '/about', current: currentLink ===  '/about' },
   ]
 
   return (
@@ -39,15 +38,6 @@ export default function Navbar() {
             </DisclosureButton>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
-              <Image
-                alt="Your Company"
-                src={energyLogo}
-                className=""
-                width={75}
-                height={75}
-              />
-            </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (

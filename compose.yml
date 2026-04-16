@@ -7,6 +7,8 @@ services:
       dockerfile: next.dockerfile
     ports:
       - 3000:3000
+    volumes:
+      - ./frontend/public:/app/public
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:4000
     depends_on:
@@ -22,8 +24,8 @@ services:
       - 4000:4000
     volumes:
       - ./backend/InputData:/app/InputData
+      - ./backend/OceanPortfolioOptimization:/app/OceanPortfolioOptimization
       - ./backend/OutputData:/app/OutputData
-      # Place your gurobi.lic file in the project root (same folder as compose.yml)
       - ./gurobi.lic:/root/gurobi.lic
     environment:
       - hsds_endpoint=https://developer.nrel.gov/api/hsds

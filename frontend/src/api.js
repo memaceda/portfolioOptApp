@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 
 const url = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
+console.log("Current API URL:", process.env.NEXT_PUBLIC_API_URL);
 
 const api = {
     test: async () => {

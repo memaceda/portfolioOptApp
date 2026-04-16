@@ -1,0 +1,34 @@
+import pandas as pd
+import numpy as np
+
+A_List = [1090.909091,858.8298443,946.4655427,829.2840946,808.0808081] # rotor area m^2
+Cp_List = [1.1,0.69,0.69,0.9,1.1] #coefficients of power
+capex_list = [0.425,0.4,0.41,0.39,0.39] #
+opex_list_temp = [0.305,0.305,0.305,0.305,0.305]
+opex_list = opex_list_temp
+
+print(Cp_List[1])
+print(Cp_List[2])
+rated_flow_speed_list = [1,1.5,1.75,1.75,1.5] #m/s
+rated_power_list = [600,1000,1750,2000,1500] #kW
+rho = 1000
+velo_list = [0.50,0.75,1,1.25,1.50,1.75,2,2.25,2.5,2.75] #m/s
+power = []
+capex = []
+opex = []
+
+for i in range(len(A_List)):
+    power = []
+    print(i)
+    for j in velo_list:
+        power.append(min((Cp_List[i]*(1/2)*A_List[i]*(j**3)),rated_power_list[i]))
+    name = "design" + str(i) +"coax" + ".csv"
+    DF = pd.DataFrame(power)
+    DF.to_csv(name, index=False, header = False)
+
+    capex = capex_list[i] 
+    opex = opex_list[i]
+    ratedPower = rated_power_list[i]
+    name2 = "design" + str(i) +"coax_costAndDeviceInfo.csv"
+    DF = pd.DataFrame([capex,opex,ratedPower])
+    DF.to_csv(name2, index=False, header = False)
